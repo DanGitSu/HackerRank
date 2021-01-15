@@ -10,16 +10,16 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
+        String s = scan.nextLine().trim();
         // Write your code here.
-        if (s.length() > 0 ){
-            String delim = "[ !,?._'@\\s]+";
+        if (s.length() > 0 && s.length() < 400000 ){
+            String delim = "[!,?._'@\\s]+";
             String[] ans = s.split(delim);
             System.out.println(ans.length);
             for (String line : ans){
                 System.out.println(line);
             }
-        }else{
+        }else if (s.length() == 0){
             System.out.println(0);
         }
         scan.close();
